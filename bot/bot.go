@@ -22,6 +22,7 @@ func Run() {
 	}
 	
 	dg, err := discordgo.New("Bot " + Token)
+	dg.Identify.Intents = discordgo.IntentsGuildMessages | discordgo.IntentsMessageContent
 	if err != nil {
 		log.Fatal("err")
 	}
