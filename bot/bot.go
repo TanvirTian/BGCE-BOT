@@ -16,10 +16,6 @@ import (
 var Token string 
 
 func Run() {
-	Token = os.Getenv("Token")
-	if Token == "" {
-		log.Fatal("No Token found in the environment variable")
-	}
 	
 	dg, err := discordgo.New("Bot " + Token)
 	dg.Identify.Intents = discordgo.IntentsGuildMessages | discordgo.IntentsMessageContent
