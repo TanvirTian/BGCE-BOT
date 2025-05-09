@@ -11,14 +11,8 @@ import (
 
 
 func main() {
-	err := godotenv.Load()
-
-	if err != nil {
-		log.Fatal("Error loading  .env file")
-	}
-
 	token, ok := os.LookupEnv("Token")
-	if !ok {
+	if !ok || token == "" {
 		log.Fatal("Must set Discord token as env variable: Token")
 	}
 
