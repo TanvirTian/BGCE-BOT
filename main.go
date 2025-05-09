@@ -9,13 +9,11 @@ import (
 
 
 func main() {
-	token, ok := os.LookupEnv("Token")
-	if !ok || token == "" {
+	Token := os.Getenv("Token")
+	if Token == "" {
 		log.Fatal("Must set Discord token as env variable: Token")
 	}
 
-	bot.Token = token
+	bot.Token = Token
 	bot.Run()
-
-
 }
